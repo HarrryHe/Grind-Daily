@@ -1,39 +1,17 @@
 {
   "name": "grind-daily",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.7",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "^3.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "version": "1.0.0",
+  "description": "## Project Overview GrindDaily is a daily challenge platform where users can view and complete tasks via the React frontend, while the Spring Boot backend provides RESTful APIs for data interaction.",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && nodemon server.js",
+    "client": "cd client && npm start"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
   }
 }
