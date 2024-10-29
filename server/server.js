@@ -1,18 +1,25 @@
-// 1. 导入依赖
-const express = require('express');  // 导入 Express 框架
-const app = express();               // 创建 Express 应用实例
-const PORT = 5000;                   // 定义服务器运行的端口号
+//initialize all necessary frameworks and settings
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const PORT = 5000;
+const loginRoute = require('./routes/login');
+const registerRoute = require('./routes/register');
 
-// 2. 配置中间件
-app.use(express.json());  // 使用内置的中间件解析 JSON 数据，用于解析请求体中的 JSON 数据
+//MongoDB Connection:
+const mongoose = require('mongoose')
 
-// 3. 定义简单的 API 路由
-app.get('/api', (req, res) => {
-    // 当访问 /api 路由时，发送一个 JSON 响应
-    res.json({ message: 'Hello from Node.js server!' });
-});
+app.use(express.json());
 
-// 4. 启动服务器并监听指定端口
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => console.log("Connected to MongoDB"))
+.catch(error => console.error("MongoDB connection error:", error));
+
+//Router Area
+app.use('/login', loginRoute);
+app.use('/register', registerRoute);
+
+//for local test, change the URL after deploy to backend application
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
