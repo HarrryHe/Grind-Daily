@@ -4,11 +4,11 @@ const User = require('../models/user');
 const router = express.Router();
 
 //Without Auto-Login feature (user need to go back to login after registered)
-app.post('/', async(req, res) => {
+router.post('/', async(req, res) => {
     const { username, email, password } = req.body;
 
     try {
-        const user = await User.findone({ email });
+        const user = await User.findOne({ email });
         if (user) {
             return res.status(400).json({ error: "User Exist"});
         }
@@ -21,7 +21,6 @@ app.post('/', async(req, res) => {
             email,
             password: hashedPassword,
         });
-
 
         res.status(201).json({ message: 'User registered successfully', userId: newUser._id, userName:newUser.username, userEmail:newUser.email});
 
