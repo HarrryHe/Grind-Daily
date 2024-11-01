@@ -1,25 +1,20 @@
 import React from 'react';
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
-import './App.css';
-import Home from './Home';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import Task from './components/Task';
+import Header from './Header';
+import './styles/home.css';
+import './styles/index.css';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <nav>
-          <Link to="/"></Link>
-          <Link to="/task"></Link>
-          <Link to="/other"></Link>
-        </nav>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/task" element={<Task />}>
-          </Route>
-          <Route path="/other" element={<Task />} />
-        </Routes>
-    </Router>
+    <div className="App h-screen">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/task" element={<Task />}>
+        </Route>
+      </Routes>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.header-text-gradient {
+    background: linear-gradient(90deg, #c286ff, #ff76a3, #7a34a1);
+    background-clip: text;
+    color: transparent;
+    cursor: pointer;
+}
+
+.second-header-text-gradient {
+    background: linear-gradient(90deg, #ff76a3, #7a34a1, #c286ff);
+    background-clip: text;
+    color: transparent;
+}
+
+.my-svg-icon {
+    width: 10rem;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

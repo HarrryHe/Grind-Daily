@@ -1,0 +1,60 @@
+/* src/index.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+:root {
+    /* Light Mode */
+    --background-light-mode: #ffffff;
+    --text-light-mode: #333333;
+    --primary-light-mode: #007bff;
+    --secondary-light-mode: #6c757d;
+
+    /* Dark Mode */
+    --background-dark-mode: #25262e;
+    --text-dark-mode: #ffffff;
+    --primary-dark-mode: #1e90ff;
+    --secondary-dark-mode: #353a3f;
+    
+
+    /* Border Radius */
+    --border-radius: 4px;
+
+    --text-color: #BFA2DB;
+
+    --hover-color: #8458B3;
+    --custom-background-color: #25262e;
+
+}
+
+body {
+    background-color: var(--background-dark-mode);
+    height: 100vh;
+}
+
+.text-link {
+    color: var(--text-color);
+    transition: color 0.3s ease; /* 平滑过渡 */
+}
+
+.text-link:hover {
+    color: var(--hover-color);
+}
+
+.pixelify-sans {
+    font-family: 'Pixelify Sans', serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pixelify-sans-bold {
+    font-family: 'Pixelify Sans', serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
