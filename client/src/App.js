@@ -2,8 +2,6 @@ import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import BackgroundMusic from './BackgroundMusic';
 import Home from './components/Home';
-import Login from './components/Login';
-import Register from './components/Register';
 import Task from './components/Task';
 import Header from './Header';
 import './styles/home.css';
