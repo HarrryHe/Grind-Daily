@@ -11,7 +11,7 @@ function Login() {
     const handleSubmit = async(e) => {
         e.preventDefault();
 
-        fetch('https://grinddaily-backend.onrender.com/login', {
+        fetch('https://grinddaily-backend.onrender.com/api/login', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
