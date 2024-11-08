@@ -2,6 +2,7 @@ const User = require('../models/user');
 const Comment = require('../models/comment');
 const Challenge = require('../models/task');
 const express = require('express');
+const router = express.Router();
 
 router.get('/:userId', async (req, res) => {
     const { userId } = req.params;
