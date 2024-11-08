@@ -7,6 +7,7 @@ import './styles/home.css';
 import './styles/index.css';
 
 function App() {
+
   return (
     <div className="App h-screen">
       <Header />
