@@ -13,10 +13,6 @@ const path = require('path');
 //MongoDB Connection:
 const mongoose = require('mongoose')
 
-app.use(history());
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
-
-
 app.use(express.json());
 app.use(cors({
     origin: ['http://localhost:3000', 'https://grinddaily.onrender.com']
@@ -30,6 +26,9 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
 app.use('/user', userRoute);
+
+app.use(history());
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 //for local test, change the URL after deploy to backend application
 app.listen(PORT, () => {
