@@ -1,8 +1,9 @@
 //initialize all necessary frameworks and settings
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const app = express();
-const PORT = 5000;
+const PORT = 9000;
 const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register');
 
@@ -10,6 +11,9 @@ const registerRoute = require('./routes/register');
 const mongoose = require('mongoose')
 
 app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:3000'
+}));
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("Connected to MongoDB"))

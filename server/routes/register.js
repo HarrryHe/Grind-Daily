@@ -1,9 +1,9 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const User = require('../models/user');
+const jwt = require('jsonwebtoken');
 const router = express.Router();
 
-//Without Auto-Login feature (user need to go back to login after registered)
 router.post('/', async(req, res) => {
     const { username, email, password } = req.body;
 
@@ -22,7 +22,14 @@ router.post('/', async(req, res) => {
             password: hashedPassword,
         });
 
-        res.status(201).json({ message: 'User registered successfully', userId: newUser._id, userName:newUser.username, userEmail:newUser.email});
+        //auto login
+        if (!process.env.JWT_SECRET) {
+            return res.status(500).json({ error: "JWT secret not set" });
+        }
+
+        const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET);
+
+        res.status(201).json({ message: 'User registered successfully', userId:newUser._id, userName:newUser.username, userEmail:newUser.email, token});
 
     }catch(error) {
         return res.status(400).json({ error: "Failed Creating User"});

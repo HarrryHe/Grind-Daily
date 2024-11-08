@@ -1,4 +1,3 @@
-
 function Bar({ title = "default" }) {
 
     return (
@@ -8,7 +7,6 @@ function Bar({ title = "default" }) {
             <div className="flex-grow border-t-2 border-gray-500"></div>
         </div>
     );
-
 }
 
 export default Bar;

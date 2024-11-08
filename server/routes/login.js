@@ -17,7 +17,10 @@ router.post('/', async (req, res) => {
         if(!isPasswordValid) {
             return res.status(401).json({ error: "Invalid password" });
         }
-
+        
+        if (!process.env.JWT_SECRET) {
+            return res.status(500).json({ error: "JWT secret not set" });
+        }
         const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
         res.json({ userId:user._id, userName:user.username, userEmail:user.email, token, message: 'Login successful' });
     }catch (error) {

@@ -1,0 +1,162 @@
+.calendar-container {
+    background: linear-gradient(360deg, #c286ff 0%, #ff76a3 0%, #7a34a1 75%);
+    opacity: 0.75;
+    border-radius: 12px;
+    box-shadow: 0px 2px rgb(0, 0, 0, 0.15);
+    padding: 16px;
+    height: 70vh;
+    max-height: 100vh;
+    margin-bottom: 150px;
+    border: whitesmoke;
+    width: 100%;
+    max-width: 95%;
+
+}
+
+
+.calendar-container .today{
+    background-color: whitesmoke;
+    color: #ff76a3;
+}
+
+.calendar-container h2{
+    color: whitesmoke;
+    font-size: 36px;
+    text-decoration: underline;
+    text-align: center;
+    left: 25%;
+}
+
+.days-of-week{
+    text-align: center;
+    color: white;
+
+}
+
+.days-of-month{
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+
+
+}
+
+.days-of-month:hover{
+    color: #ff76a3;
+    background-color: white;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+.plus-button{
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.plus-button:hover{
+    color: white;
+    background-color: #ff76a3;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.insert-task label{
+    font-size:  12px;
+    font-weight: bold;
+}
+
+.insert-task input{
+    color: black;
+}
+
+.add-button{
+    color: white;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button:hover{
+    color: #ff76a3;
+    background-color: white;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin: 2px;
+    padding: 4px;
+
+}
+
+.cancel-button{
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cancel-button:hover{
+    margin: 1px;
+    padding: 4px;
+    color: #ff76a3;
+    background-color: white;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.new-task-priority{
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.priority-marker{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 4px;
+    border-radius: 45%;
+}
+
+.priority-marker.low{
+    background-color: green;
+}
+
+.priority-marker.moderate{
+    background-color: yellow;
+
+}
+
+.priority-marker.high{
+    background-color: red;
+}
+
+.dated-tasks{
+    overflow-y: auto;
+    font-size: 12px;
+    color: #c286ff;
+
+}
+
+.enlarged-date{
+    color: #ff76a3;
+    background-color: white;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    z-index: 10;
+    transform: scale(1.5);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.enlarged-date .task-item{
+    margin-top: 10px;
+    padding: 5px;
+    background-color: white;
+    color: #ff76a3;
+}

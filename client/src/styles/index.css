@@ -13,7 +13,7 @@
 
     /* Dark Mode */
     --background-dark-mode: #25262e;
-    --text-dark-mode: #ffffff;
+    --text-dark-mode: rgb(209 213 219);
     --primary-dark-mode: #1e90ff;
     --secondary-dark-mode: #353a3f;
     
@@ -54,6 +54,10 @@ body {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+}
+
+.text-normal {
+    color: var(--text-dark-mode);
 }
 
 

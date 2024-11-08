@@ -12,8 +12,9 @@
 }
 
 .my-svg-icon {
-    width: 10rem;
+    width: 80%;
     height: auto;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    display: block;
 }
