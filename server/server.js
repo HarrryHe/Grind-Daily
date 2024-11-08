@@ -7,9 +7,15 @@ const PORT = 9000;
 const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register');
 const userRoute = require('./routes/user');
+const history = require('connect-history-api-fallback');
+const path = require('path');
 
 //MongoDB Connection:
 const mongoose = require('mongoose')
+
+app.use(history());
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+
 
 app.use(express.json());
 app.use(cors({
