@@ -3,7 +3,7 @@ const Comment = require('../models/comment');
 const Challenge = require('../models/task');
 const express = require('express');
 
-router.get('/:id', async (req, res) => {
+router.get('/:userId', async (req, res) => {
     const { userId } = req.params;
 
     try {
@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.patch('/:userId', async (req, res) => {
+router.patch('/userId', async (req, res) => {
     const { userId } = req.params;
     const updates = req.body;
 
