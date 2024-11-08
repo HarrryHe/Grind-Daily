@@ -23,9 +23,9 @@ mongoose.connect(process.env.MONGODB_URI)
 .catch(error => console.error("MongoDB connection error:", error));
 
 //Router Area
-app.use('/login', loginRoute);
-app.use('/register', registerRoute);
-app.use('/user', userRoute);
+app.use('/api/login', loginRoute);
+app.use('/api/register', registerRoute);
+app.use('/api/user', userRoute);
 
 app.use(history());
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
