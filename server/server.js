@@ -7,8 +7,6 @@ const PORT = 9000;
 const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register');
 const userRoute = require('./routes/user');
-const history = require('connect-history-api-fallback');
-const path = require('path');
 
 //MongoDB Connection:
 const mongoose = require('mongoose')
@@ -27,8 +25,6 @@ app.use('/api/login', loginRoute);
 app.use('/api/register', registerRoute);
 app.use('/api/user', userRoute);
 
-app.use(history());
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 //for local test, change the URL after deploy to backend application
 app.listen(PORT, () => {

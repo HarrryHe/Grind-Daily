@@ -32,13 +32,13 @@ router.get('/:userId', async (req, res) => {
 
         res.json({message: "User information fetched successfully", user:userInfo});
 
-    } catch (e) {
-        console.error('Error fetching user details:', e);
+    } catch (error) {
+        console.error('Error fetching user details:', error);
         res.status(500).json({ error: 'Failed to retrieve user information' });
     }
 })
 
-router.patch('/userId', async (req, res) => {
+router.patch('/:userId', async (req, res) => {
     const { userId } = req.params;
     const updates = req.body;
 

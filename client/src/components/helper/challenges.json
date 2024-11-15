@@ -1,0 +1,922 @@
+[
+    {
+        "title": "30-Minute Morning Yoga",
+        "genre": "fitness",
+        "description": "Start your day with a gentle 30-minute yoga session focusing on stretching and breathing exercises. Great for flexibility and relaxation.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Read a Chapter of a Book",
+        "genre": "education",
+        "description": "Choose a book you've been wanting to read and complete at least one chapter to further your learning or relaxation.",
+        "duration": 25,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Write a Short Story",
+        "genre": "creativity",
+        "description": "Unleash your imagination by writing a 500-word short story on any topic of your choice. Focus on creativity and detail.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Clean Your Workspace",
+        "genre": "productivity",
+        "description": "Organize and clean your desk or workspace to create a more conducive environment for focused work.",
+        "duration": 20,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Try a New Recipe",
+        "genre": "creativity",
+        "description": "Experiment in the kitchen by cooking a new recipe. Try to make a dish that you haven't prepared before!",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Go for a Walk Outside",
+        "genre": "fitness",
+        "description": "Take a 30-minute walk outside to enjoy some fresh air and clear your mind. Aim for a brisk pace.",
+        "duration": 30,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn a New Vocabulary Word",
+        "genre": "education",
+        "description": "Enhance your language skills by learning a new word, its meaning, and using it in a sentence.",
+        "duration": 10,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Meditate for 15 Minutes",
+        "genre": "fitness",
+        "description": "Spend 15 minutes in meditation to focus on breathing, reduce stress, and gain mental clarity.",
+        "duration": 15,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Plan a Weekly Schedule",
+        "genre": "productivity",
+        "description": "Organize your week by planning a schedule with all major tasks, deadlines, and goals.",
+        "duration": 20,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Draw Something",
+        "genre": "creativity",
+        "description": "Grab a piece of paper and draw whatever comes to mind. Focus on enjoying the process without judgment.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Declutter a Drawer",
+        "genre": "productivity",
+        "description": "Pick one drawer in your home and spend 20 minutes decluttering and organizing its contents.",
+        "duration": 20,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Stretch for Flexibility",
+        "genre": "fitness",
+        "description": "Spend 15 minutes stretching your muscles to improve flexibility and prevent injuries.",
+        "duration": 15,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Read a Science Article",
+        "genre": "education",
+        "description": "Find an interesting science article online and read it to learn something new about the world.",
+        "duration": 15,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Write a Gratitude List",
+        "genre": "creativity",
+        "description": "Spend 10 minutes writing a list of things you're grateful for. Reflect on each item and its significance.",
+        "duration": 10,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Practice Deep Breathing",
+        "genre": "fitness",
+        "description": "Take 5 minutes to practice deep breathing exercises, inhaling and exhaling slowly to calm your mind.",
+        "duration": 5,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Research a New Skill",
+        "genre": "education",
+        "description": "Choose a skill you're interested in and spend 30 minutes researching online resources to learn more.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Write a Poem",
+        "genre": "creativity",
+        "description": "Express your thoughts and emotions by writing a poem on any theme you choose.",
+        "duration": 20,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize Digital Files",
+        "genre": "productivity",
+        "description": "Spend 30 minutes organizing digital files on your computer for easier access.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Do a Quick Workout",
+        "genre": "fitness",
+        "description": "Complete a 20-minute workout focusing on cardio and strength to get your heart rate up.",
+        "duration": 20,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Listen to a Podcast",
+        "genre": "education",
+        "description": "Choose a podcast episode on a topic you enjoy and listen to it for new insights.",
+        "duration": 40,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Paint or Draw Freestyle",
+        "genre": "creativity",
+        "description": "Use paints or pencils to create any image that comes to mind without restrictions.",
+        "duration": 45,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Make a To-Do List",
+        "genre": "productivity",
+        "description": "Create a list of tasks for the day to help prioritize and stay on track.",
+        "duration": 10,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Dance for 10 Minutes",
+        "genre": "fitness",
+        "description": "Put on some music and dance freely for 10 minutes to boost your mood and exercise.",
+        "duration": 10,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Study a Historical Event",
+        "genre": "education",
+        "description": "Pick a historical event and spend 30 minutes learning about its impact and details.",
+        "duration": 30,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Create a Vision Board",
+        "genre": "creativity",
+        "description": "Use images and words to create a vision board of your goals and dreams.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize Your Closet",
+        "genre": "productivity",
+        "description": "Spend an hour organizing and tidying up your closet to keep it manageable.",
+        "duration": 60,
+        "difficulty": 4,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Do a HIIT Workout",
+        "genre": "fitness",
+        "description": "Complete a 20-minute high-intensity interval training session for a quick yet intense workout.",
+        "duration": 20,
+        "difficulty": 4,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn Basic Phrases in a New Language",
+        "genre": "education",
+        "description": "Spend 20 minutes learning common phrases in a language you find interesting.",
+        "duration": 20,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Write in Your Journal",
+        "genre": "creativity",
+        "description": "Take time to reflect on your day and write down your thoughts in a journal.",
+        "duration": 15,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Research a New Recipe",
+        "genre": "education",
+        "description": "Spend time researching and picking a new recipe you want to try cooking.",
+        "duration": 15,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Plan a Monthly Budget",
+        "genre": "productivity",
+        "description": "Spend time setting up a budget for the month, tracking your income and expenses.",
+        "duration": 40,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Read an Inspirational Biography",
+        "genre": "education",
+        "description": "Pick an inspirational figure and read a short biography about them to gain motivation.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Practice Calligraphy",
+        "genre": "creativity",
+        "description": "Spend time practicing calligraphy or lettering for improved handwriting and artistic expression.",
+        "duration": 25,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Watch a Documentary",
+        "genre": "education",
+        "description": "Choose a documentary on a topic of interest to expand your knowledge and understanding.",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize Your Emails",
+        "genre": "productivity",
+        "description": "Spend 30 minutes cleaning up your inbox by deleting old emails and organizing folders.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Complete a Sudoku Puzzle",
+        "genre": "creativity",
+        "description": "Challenge yourself with a Sudoku puzzle to boost logical thinking skills.",
+        "duration": 20,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Review Your Goals",
+        "genre": "productivity",
+        "description": "Reflect on your personal and professional goals to assess progress and set new objectives.",
+        "duration": 15,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Explore a New Podcast",
+        "genre": "education",
+        "description": "Find a new podcast episode on a subject of interest and listen for learning and enjoyment.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Create a Playlist",
+        "genre": "creativity",
+        "description": "Curate a playlist with your favorite songs or songs you want to explore and relax to.",
+        "duration": 20,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Write a Personal Letter",
+        "genre": "creativity",
+        "description": "Write a letter to a friend or family member to stay connected and share life updates.",
+        "duration": 25,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Try a 5-Minute Workout",
+        "genre": "fitness",
+        "description": "Do a quick 5-minute workout to boost energy and improve physical health.",
+        "duration": 5,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Research a Charity",
+        "genre": "education",
+        "description": "Research a charity organization that resonates with you to understand its mission.",
+        "duration": 15,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Set Up a Reading List",
+        "genre": "education",
+        "description": "Make a list of books you want to read this year and set goals for finishing them.",
+        "duration": 15,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Create a Meal Plan",
+        "genre": "productivity",
+        "description": "Plan out your meals for the week to save time and stay on track with nutrition.",
+        "duration": 30,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Practice a Dance Routine",
+        "genre": "fitness",
+        "description": "Learn and practice a short dance routine for fun and fitness.",
+        "duration": 20,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Try a Guided Meditation",
+        "genre": "fitness",
+        "description": "Listen to a guided meditation for relaxation and mindfulness.",
+        "duration": 15,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Journal About Your Day",
+        "genre": "creativity",
+        "description": "Reflect on your experiences by journaling about what went well and what you could improve.",
+        "duration": 10,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Memorize a Quote",
+        "genre": "education",
+        "description": "Choose an inspiring quote and memorize it to keep motivation close to mind.",
+        "duration": 5,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize Your Phone Apps",
+        "genre": "productivity",
+        "description": "Declutter your phone by organizing apps into folders and removing unnecessary ones.",
+        "duration": 15,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn About a Famous Artist",
+        "genre": "education",
+        "description": "Research the life and works of a famous artist to gain cultural appreciation.",
+        "duration": 25,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Make a Gratitude Call",
+        "genre": "creativity",
+        "description": "Call a friend or family member to express gratitude for something they've done for you.",
+        "duration": 10,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Watch a TED Talk",
+        "genre": "education",
+        "description": "Choose a TED Talk on an interesting subject and watch it to learn something new.",
+        "duration": 20,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Review a Recipe Blog",
+        "genre": "education",
+        "description": "Browse through a recipe blog for meal inspiration and save your favorite recipes.",
+        "duration": 20,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Plan an Outdoor Activity",
+        "genre": "fitness",
+        "description": "Plan an outdoor activity like hiking or biking that you can look forward to.",
+        "duration": 15,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Research a New Hobby",
+        "genre": "education",
+        "description": "Look into a hobby you've always wanted to try and explore the basics of getting started.",
+        "duration": 20,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Practice Positive Affirmations",
+        "genre": "fitness",
+        "description": "Spend a few minutes saying positive affirmations to boost your confidence and mindset.",
+        "duration": 5,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize Your Bookshelf",
+        "genre": "productivity",
+        "description": "Arrange and declutter your bookshelf for easier access and organization.",
+        "duration": 25,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Create a Vision Statement",
+        "genre": "creativity",
+        "description": "Write down a personal vision statement to keep you focused on your life goals.",
+        "duration": 30,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Watch a Motivational Video",
+        "genre": "education",
+        "description": "Find a motivational video that inspires you and gives you new perspectives.",
+        "duration": 10,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize a Family Game Night",
+        "genre": "social",
+        "description": "Plan a family game night with board games or other activities for bonding and fun.",
+        "duration": 60,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Plan a Group Picnic",
+        "genre": "social",
+        "description": "Organize a picnic at a local park with friends or family. Coordinate food, drinks, and games to ensure everyone has a good time.",
+        "duration": 120,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn the Basics of Python",
+        "genre": "education",
+        "description": "Begin learning Python by covering essential topics like data types, variables, and basic control structures. Try writing simple scripts.",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Host a Movie Night",
+        "genre": "social",
+        "description": "Invite friends or family over for a movie night. Choose a movie everyone will enjoy, prepare snacks, and create a cozy atmosphere.",
+        "duration": 150,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Practice Basic Basketball Skills",
+        "genre": "education",
+        "description": "Head to a court to practice foundational basketball skills like dribbling, passing, and shooting. Focus on technique and control.",
+        "duration": 60,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Virtual Coffee Chat with a Friend",
+        "genre": "social",
+        "description": "Set up a virtual coffee chat with a friend you haven’t spoken to in a while. Catch up, share stories, and enjoy a relaxed conversation.",
+        "duration": 30,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Start Learning Spanish",
+        "genre": "education",
+        "description": "Begin learning Spanish by studying basic phrases and greetings. Practice pronunciation and learn how to introduce yourself.",
+        "duration": 45,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize a Game Tournament",
+        "genre": "social",
+        "description": "Plan a tournament with board games or online games, inviting friends to compete. Decide on the games, rules, and rewards for winners.",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn How to Cook a New Dish",
+        "genre": "education",
+        "description": "Choose a recipe that interests you and learn to cook it step by step. Gather all ingredients and follow the instructions carefully.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Attend a Virtual Book Club Meeting",
+        "genre": "social",
+        "description": "Join a virtual book club to discuss a recently read book. Engage with others, share opinions, and get new reading recommendations.",
+        "duration": 45,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn the Basics of Photography",
+        "genre": "education",
+        "description": "Read about the basic rules of photography, such as composition, lighting, and focus. Practice by taking photos with your camera or phone.",
+        "duration": 60,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Go for a Group Bike Ride",
+        "genre": "social",
+        "description": "Plan a group bike ride with friends or family. Choose a scenic route and make sure everyone has a helmet and bike safety equipment.",
+        "duration": 90,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn Basic Guitar Chords",
+        "genre": "education",
+        "description": "If you have a guitar, learn the basic chords (e.g., C, G, D, Em) and practice transitioning between them smoothly.",
+        "duration": 45,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize a Cooking Class for Friends",
+        "genre": "social",
+        "description": "Host a cooking session where you teach friends to prepare a simple dish. Share tips and make it an enjoyable learning experience.",
+        "duration": 120,
+        "difficulty": 4,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Start a Coding Challenge",
+        "genre": "education",
+        "description": "Take part in an online coding challenge (e.g., HackerRank, LeetCode) to improve problem-solving skills in your preferred programming language.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Have a Virtual Karaoke Session",
+        "genre": "social",
+        "description": "Host a virtual karaoke session with friends using online platforms. Sing along to your favorite songs and enjoy a fun evening.",
+        "duration": 60,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn How to Meditate",
+        "genre": "education",
+        "description": "Explore beginner meditation techniques. Focus on breathing exercises and mindfulness for relaxation.",
+        "duration": 20,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Play a Social Deduction Game",
+        "genre": "social",
+        "description": "Invite friends over to play a social deduction game like Mafia or Among Us to enhance teamwork and deduction skills.",
+        "duration": 45,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Practice Drawing Basics",
+        "genre": "education",
+        "description": "Learn basic drawing techniques such as shading, perspective, and line work. Draw simple objects to practice.",
+        "duration": 45,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Join a Study Group",
+        "genre": "social",
+        "description": "Create or join a study group for a subject you're learning. Discuss ideas, review material, and prepare for exams together.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn CPR Basics",
+        "genre": "education",
+        "description": "Take an online CPR basics course to understand life-saving techniques that could be used in emergencies.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Host a Debate Night",
+        "genre": "social",
+        "description": "Organize a debate with friends on a lighthearted topic. Encourage respectful discussions and have fun exploring different viewpoints.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Start Learning Japanese",
+        "genre": "education",
+        "description": "Learn the basics of Japanese, including simple greetings, hiragana characters, and essential phrases.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Have a Cultural Exchange Session",
+        "genre": "social",
+        "description": "Connect with friends or people from different backgrounds and share cultural traditions, foods, and stories.",
+        "duration": 45,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Research Personal Finance Basics",
+        "genre": "education",
+        "description": "Learn about budgeting, saving, and investing. Start by creating a simple budget to track monthly expenses.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Plan a Charity Event",
+        "genre": "social",
+        "description": "Plan a charity event with friends, like a bake sale or fun run, to raise money for a cause you care about.",
+        "duration": 90,
+        "difficulty": 4,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Study Time Management Techniques",
+        "genre": "education",
+        "description": "Explore time management strategies like the Pomodoro technique or Eisenhower Matrix to improve productivity.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Participate in a Fun Run",
+        "genre": "social",
+        "description": "Sign up for a local fun run with friends. Prepare and train together, and enjoy the community atmosphere during the event.",
+        "duration": 180,
+        "difficulty": 4,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn a New Card Game",
+        "genre": "education",
+        "description": "Learn a classic card game like Bridge or Rummy. Practice the rules and try playing with friends or family.",
+        "duration": 45,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize a Book Exchange",
+        "genre": "social",
+        "description": "Host a book exchange event where friends bring books they want to trade, and each person gets something new to read.",
+        "duration": 60,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn Chess Strategy",
+        "genre": "education",
+        "description": "Review fundamental chess strategies and openings. Practice moves against an opponent or online to improve.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Attend a Local Meetup",
+        "genre": "social",
+        "description": "Find a local interest-based meetup (e.g., technology, art, outdoor sports) and attend to network and learn.",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn Basic HTML and CSS",
+        "genre": "education",
+        "description": "Learn how to create a simple web page using HTML and CSS. Try styling text, adding images, and experimenting with layouts.",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Play a New Board Game",
+        "genre": "social",
+        "description": "Try out a new board game with friends or family. Learn the rules together and enjoy the experience.",
+        "duration": 60,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Explore a TED Talk Playlist",
+        "genre": "education",
+        "description": "Find a playlist of TED Talks on a topic you’re interested in and watch one to get inspired and learn something new.",
+        "duration": 20,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize a Talent Show with Friends",
+        "genre": "social",
+        "description": "Plan a casual talent show where each person can showcase a skill or performance. Make it a fun and encouraging environment.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Host a Trivia Night",
+        "genre": "social",
+        "description": "Organize a trivia game night with friends or family. Prepare questions on various topics, and enjoy a fun competition.",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Take a Basic Photography Course",
+        "genre": "education",
+        "description": "Learn the essentials of photography, including camera settings, composition, and lighting to improve your photo-taking skills.",
+        "duration": 120,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Create a Monthly Meal Plan",
+        "genre": "productivity",
+        "description": "Plan healthy meals for the entire month, including a shopping list for each week to streamline grocery shopping.",
+        "duration": 45,
+        "difficulty": 4,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Try a 15-Minute Full-Body Stretch",
+        "genre": "fitness",
+        "description": "Follow a full-body stretch routine focusing on major muscle groups to increase flexibility and reduce muscle tension.",
+        "duration": 15,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn Basic Video Editing",
+        "genre": "education",
+        "description": "Get familiar with a basic video editing tool and practice trimming, adding transitions, and inserting audio in a sample video.",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Plan a Board Game Night",
+        "genre": "social",
+        "description": "Invite friends for an evening of board games. Choose a few games everyone enjoys, prepare snacks, and create a fun atmosphere.",
+        "duration": 120,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Set Up a Financial Goal Tracker",
+        "genre": "productivity",
+        "description": "Define financial goals and set up a system to track your savings or budget goals to monitor progress.",
+        "duration": 40,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Create a Personalized Workout Plan",
+        "genre": "fitness",
+        "description": "Design a weekly workout plan tailored to your goals, focusing on consistency and gradually increasing intensity.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Paint a Landscape Scene",
+        "genre": "creativity",
+        "description": "Use paints or colored pencils to create a landscape scene. Focus on details like lighting and depth for added realism.",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Join an Online Language Exchange",
+        "genre": "social",
+        "description": "Sign up for a language exchange platform to practice speaking with native speakers and improve conversational skills.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Practice Coding Challenges",
+        "genre": "education",
+        "description": "Take on a series of coding challenges on platforms like LeetCode or HackerRank to improve problem-solving skills.",
+        "duration": 60,
+        "difficulty": 4,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Do a Guided Relaxation Exercise",
+        "genre": "fitness",
+        "description": "Follow a guided relaxation or mindfulness video to unwind and de-stress, focusing on breathing and body relaxation.",
+        "duration": 15,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Host a Book Discussion Group",
+        "genre": "social",
+        "description": "Invite friends to discuss a book you’ve all read. Share thoughts on characters, themes, and favorite moments.",
+        "duration": 60,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Learn Basics of Baking Bread",
+        "genre": "education",
+        "description": "Follow a beginner’s recipe to bake a simple loaf of bread, learning about kneading, proofing, and baking techniques.",
+        "duration": 120,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Organize Your Digital Files",
+        "genre": "productivity",
+        "description": "Sort and organize your digital files, creating folders for better file management and easy access.",
+        "duration": 30,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Sketch a Self-Portrait",
+        "genre": "creativity",
+        "description": "Use pencil and paper to draw a self-portrait. Focus on facial features and proportions to capture likeness.",
+        "duration": 60,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Host a Virtual Coffee Chat",
+        "genre": "social",
+        "description": "Set up a virtual coffee meeting with a friend or colleague to catch up and share updates over a casual conversation.",
+        "duration": 30,
+        "difficulty": 1,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Start a Digital Photo Album",
+        "genre": "productivity",
+        "description": "Compile photos into a digital album, arranging them by event or theme, and add captions to preserve memories.",
+        "duration": 45,
+        "difficulty": 2,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Take a Virtual Art Class",
+        "genre": "education",
+        "description": "Join a virtual class on drawing or painting techniques, practicing new skills with guidance from an instructor.",
+        "duration": 90,
+        "difficulty": 3,
+        "generatedBy": "system"
+    },
+    {
+        "title": "Plan a DIY Craft Project",
+        "genre": "creativity",
+        "description": "Choose a simple DIY project, such as making candles or creating a photo frame, and gather materials to get started.",
+        "duration": 60,
+        "difficulty": 2,
+        "generatedBy": "system"
+    }
+]
