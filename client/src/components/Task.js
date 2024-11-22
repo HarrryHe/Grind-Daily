@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Plus } from 'lucide-react';
 import '../styles/task.css';
+import ProgressTracker from './ProgressTracker';
+
 
 const Task = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -78,29 +80,47 @@ const Task = () => {
   };
 
   // Function to check if a task is within the next 12 hours
-  const isTaskWithinNext12Hours = (taskTime) => {
+  const isTaskWithinNext12Hours = (taskTime, dateKey) => {
     const currentTime = new Date();
     const twelveHoursLater = new Date(currentTime.getTime() + 12 * 60 * 60 * 1000);
 
-    // Convert task time into Date object
-    const [hours, minutes] = taskTime.split(':').map(num => parseInt(num, 10));
-    const taskDate = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), hours, minutes);
+    // Check if the task is for today
+    const today = new Date();
+    const taskDate = new Date(dateKey + 'T' + taskTime);
+    
+    // Only consider tasks from today
+    if (taskDate.getDate() !== today.getDate() ||
+        taskDate.getMonth() !== today.getMonth() ||
+        taskDate.getFullYear() !== today.getFullYear()) {
+      return false;
+    }
 
     return taskDate >= currentTime && taskDate <= twelveHoursLater;
   };
 
-  // Function to get upcoming tasks for the next 12 hours
-  const getUpcomingTasks = () => {
-    const upcomingTasks = [];
-    Object.keys(tasks).forEach(dateKey => {
-      tasks[dateKey].forEach(task => {
-        if (isTaskWithinNext12Hours(task.time)) {
-          upcomingTasks.push({ dateKey, task });
-        }
-      });
+ // Modified function to get upcoming tasks for the next 12 hours of the current day only
+ const getUpcomingTasks = () => {
+  const upcomingTasks = [];
+  const today = new Date();
+  const todayKey = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+  
+  if (tasks[todayKey]) {
+    tasks[todayKey].forEach(task => {
+      if (isTaskWithinNext12Hours(task.time, todayKey)) {
+        upcomingTasks.push({ dateKey: todayKey, task });
+      }
     });
-    return upcomingTasks;
-  };
+  }
+  
+  // Sort tasks by time
+  upcomingTasks.sort((a, b) => {
+    const timeA = new Date(`1970-01-01T${a.task.time}`);
+    const timeB = new Date(`1970-01-01T${b.task.time}`);
+    return timeA - timeB;
+  });
+
+  return upcomingTasks;
+};
 
   const upcomingTasks = getUpcomingTasks();
 
@@ -213,7 +233,9 @@ const Task = () => {
               Cancel
             </button>
           </form>
+
         )}
+        <ProgressTracker tasks={tasks} />
 
         {/* Display tasks for the next 12 hours below the calendar */}
         <div className="upcoming-tasks mt-6">

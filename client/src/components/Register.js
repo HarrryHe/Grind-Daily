@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import EarthBg from '../assets/earth.png';
+import { AuthContext } from './helper/auth';
 
 
 function Register() {
@@ -9,6 +10,8 @@ function Register() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState('');
+
+    const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
@@ -46,8 +49,8 @@ function Register() {
                 localStorage.setItem('username', data.userName);
                 localStorage.setItem('email', data.userEmail);
 
+                setIsLoggedIn(true);
                 navigate('/');
-                window.location.reload();
             }
             else {
                 console.log('Login failed:', data.error);

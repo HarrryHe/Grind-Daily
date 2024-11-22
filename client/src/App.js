@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import BackgroundMusic from './BackgroundMusic';
 import Challenge from './components/Challenge';
+import { AuthProvider } from "./components/helper/auth";
 import Home from './components/Home';
 import Login from './components/Login';
 import Preloader from './components/Preloader';
@@ -11,24 +12,18 @@ import Header from './Header';
 import './styles/home.css';
 import './styles/index.css';
 
+import ProgressTracker from './components/ProgressTracker';
+
+import Profile from './components/Profile';
+
+import ChangePassword from './components/ChangePassword';
+
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if(token) {
-      setIsLoggedIn(true);
-    }
-    else {
-      setIsLoggedIn(false);
-    }
-  }, []);
-
   const location = useLocation();
   let hideNavbar = false;
-  if(location.pathname === '/login' || location.pathname === '/register') {
+  if(location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/ChangePassword') {
     hideNavbar = true;
   }
 
@@ -48,8 +43,9 @@ function App() {
   
 
   return (
+    <AuthProvider>
     <div className="App h-screen">
-      {!hideNavbar && <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}
+      {!hideNavbar && <Header />}
       <Preloader />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -57,9 +53,13 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path='/register' element={<Register />}/>
         <Route path='/challenge' element={<Challenge/>}/>
+        <Route path="/change-password" element={<ChangePassword />} />
+        <Route path='/progresstracker' element={<ProgressTracker/>} />
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
       <BackgroundMusic/>
     </div>
+    </AuthProvider>
   );
 }
 

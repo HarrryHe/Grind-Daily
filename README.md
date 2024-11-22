@@ -51,6 +51,12 @@ JWT_SECRET='asfakdanbkvkfhaifoajfpowiaaskbvpa'
 ```
 - In the field of `<YOUR USER NAME>` and `<YOUR PASSWORD>` replace them with the username and password I gave to you guys through Discord
 
+- For Test Purpose, you can use this account:
+```
+testUser
+vF2HeV8PYu2P6pAs
+```
+
 4. Run the project:
 - Finally Back to the GrindDaily folder by input following command on the command line (do not run the command if you are already at the root folder):
 ```

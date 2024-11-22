@@ -12,7 +12,7 @@
     --secondary-light-mode: #6c757d;
 
     /* Dark Mode */
-    --background-dark-mode: #25262e;
+    --background-dark-mode: rgb(23 23 23);
     --text-dark-mode: rgb(209 213 219);
     --primary-dark-mode: #1e90ff;
     --secondary-dark-mode: #353a3f;
@@ -21,10 +21,10 @@
     /* Border Radius */
     --border-radius: 4px;
 
-    --text-color: #BFA2DB;
+    --text-color: rgb(209 213 219);
 
-    --hover-color: #8458B3;
-    --custom-background-color: #25262e;
+    --hover-color: white;
+    --custom-background-color: rgb(23 23 23);
 
 }
 

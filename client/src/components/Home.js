@@ -30,7 +30,7 @@ function Home() {
                     <Lottie
                         animationData={hand}
                         style={{ width: "80%", height: "auto", margin: "auto" }}
-                        className="w-full max-w-full sm:max-w-xs md:max-w-sm lg:max-w-md"
+                        className="w-80 max-w-80 sm:max-w-xs md:max-w-sm lg:max-w-md"
                     />
                     <EastIcon className="absolute bottom-4 right-4" />
                 </NavLink>
@@ -41,7 +41,7 @@ function Home() {
                 >
                     Progress Tracking
                     <div className="my-svg-icon-container w-full max-w-full sm:max-w-xs md:max-w-sm lg:max-w-md overflow-hidden">
-                        <img src={chatBox} alt="My SVG Icon" className="my-svg-icon w-full h-auto" />
+                        <img src={chatBox} alt="My SVG Icon" className="my-svg-icon h-auto" />
                     </div>
                     <EastIcon className="absolute bottom-4 right-4" />
                 </NavLink>

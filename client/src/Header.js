@@ -1,13 +1,16 @@
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, UserIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import Lottie from "lottie-react";
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import pixelAnimation from "./assets/pixel.json";
+import { AuthContext } from './components/helper/auth';
 
-export default function Header({ isLoggedIn, setIsLoggedIn }) {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropDown, setDropDown] = useState(false);
+
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -77,6 +80,15 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
           >
             Calendar
           </NavLink>
+
+          <NavLink
+            to="/progresstracker"
+            className={({ isActive }) => 
+              isActive ? "text-sm font-semibold text-indigo-400" : "text-sm font-semibold text-link"
+            }
+          >
+            Progress Tracker
+          </NavLink>
         </div>
 
         {/* User Dropdown or Login Link */}
@@ -143,6 +155,9 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                 </NavLink>
                 <NavLink to="/yourChallenge" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base text-link font-semibold hover:bg-gray-700">
                   Create Challenges
+                </NavLink>
+                <NavLink to="/progresstracker" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2 text-base font-semibold text-link hover:bg-gray-700">
+                  Progress Tracker
                 </NavLink>
               </div>
               {!isLoggedIn && (

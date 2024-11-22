@@ -41,8 +41,8 @@ export default function BackgroundMusic() {
   return (
     <div>
       <audio ref={audioRef} src="/music/Interlinked.mp3" loop />
-      <button onClick={togglePlay} style={{ position: 'fixed', top: '10px', right: '10px' }}>
-        {isPlaying ? <FaVolumeUp /> : <FaVolumeMute />}
+      <button onClick={togglePlay} className="fixed bottom-5 right-5 text-slate-300 active:scale-125 transition-transform duration-200">
+        {isPlaying ? <FaVolumeUp className="w-6 h-6"/> : <FaVolumeMute className="w-6 h-6"/>}
       </button>
     </div>
   );

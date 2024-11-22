@@ -1,0 +1,8 @@
+.card {
+    background-position: center;
+    background-image: url('../assets/tarotCard.png');
+    background-size: cover;
+    border-radius: 1.5rem;
+    border: solid 1px;
+    border-color: gray;
+}

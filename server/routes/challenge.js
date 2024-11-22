@@ -51,3 +51,5 @@ router.post('/', async (req, res) => {
         res.status(500).json({ error: 'Failed to save challenge' });
     }
 });
+
+module.exports = router;

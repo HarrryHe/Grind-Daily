@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import MoonBg from '../assets/moon.png';
-
+import { AuthContext } from './helper/auth';
 
 function Login() {
+    const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
@@ -32,8 +34,8 @@ function Login() {
                 localStorage.setItem('userName', data.userName);
                 localStorage.setItem('userEmail', data.userEmail);
 
+                setIsLoggedIn(true);
                 navigate('/');
-                window.location.reload();
             }
             else {
                 console.log('Login failed:', data.error);
@@ -102,6 +104,15 @@ function Login() {
                             Register
                         </button>
                     </NavLink>
+
+                    <NavLink to="/change-password">
+                        <button
+                            type="button"
+                            className="w-full py-2 mt-4 bg-gradient-to-r from-gray-700 to-gray-500 text-white font-bold rounded-md transition-transform duration-500 transform hover:scale-105"
+                        >
+                            Forgot Password
+                        </button>
+                    </NavLink>              
     
                     <p className="mt-2 text-sm text-gray-300 text-center h-4">{message}</p>
                 </form>

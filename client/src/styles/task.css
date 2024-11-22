@@ -10,6 +10,9 @@
     border: whitesmoke;
     width: 100%;
     max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 
 }
 
@@ -43,6 +46,7 @@
     position: relative;
     z-index: 1;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 100%;
 
 
 }
@@ -51,6 +55,8 @@
     color: #ff76a3;
     background-color: white;
     transition: background-color 0.5s ease, color 0.5s ease;
+    transform: scale(1.3);
+    z-index: 2;
 }
 .plus-button{
     font-size: 20px;
@@ -115,6 +121,10 @@
     font-weight: bold;
 }
 
+.new-task-description{
+    color:#c286ff;
+}
+
 .priority-marker{
     display: inline-block;
     width: 8px;
@@ -146,12 +156,16 @@
 .enlarged-date{
     color: #ff76a3;
     background-color: white;
-    position: relative;
+    position: fixed;
     width: 200px;
     height: 200px;
     z-index: 10;
-    transform: scale(1.5);
+    transform: translate(-50%, -50%) scale(1.5);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+
 }
 
 .enlarged-date .task-item{
@@ -160,3 +174,18 @@
     background-color: white;
     color: #ff76a3;
 }
+
+.upcoming-tasks{
+    font-size: 24px;
+    position: sticky;
+    bottom: 0;
+    color: #c286ff;
+    padding: 16px;
+    border-top: 1px solid #ff76a3;
+    margin-top: 16px;
+    text-align: left;
+    z-index: 5;
+}
+ .insert-task{
+    color: #c286ff;
+ }
