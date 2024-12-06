@@ -1,6 +1,6 @@
-import { preLoaderAnim } from "./animation";
-import '../styles/preloader.css';
 import React, { useEffect, useState } from 'react';
+import '../styles/preloader.css';
+import { preLoaderAnim } from "./animation";
 
 const motivationalQuotes = [
   "Believe in yourself and all that you are.",

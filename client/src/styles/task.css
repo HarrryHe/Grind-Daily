@@ -4,9 +4,9 @@
     border-radius: 12px;
     box-shadow: 0px 2px rgb(0, 0, 0, 0.15);
     padding: 16px;
-    height: 70vh;
-    max-height: 100vh;
-    margin-bottom: 150px;
+    height: auto; 
+    max-height: 70vh; 
+    margin-bottom: 30px; 
     border: whitesmoke;
     width: 100%;
     max-width: 95%;
@@ -74,8 +74,9 @@
 }
 
 .insert-task label{
-    font-size:  12px;
+    font-size:  14px;
     font-weight: bold;
+    color: black;
 }
 
 .insert-task input{
@@ -154,18 +155,18 @@
 }
 
 .enlarged-date{
-    color: #ff76a3;
-    background-color: white;
-    position: fixed;
-    width: 200px;
-    height: 200px;
+    position: absolute;
     z-index: 10;
-    transform: translate(-50%, -50%) scale(1.5);
+    width: 250px;
+    background-color: white;
+    color: #25262E;
+    border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    top: 50%;
+    padding: 10px;
+    top: 20%; 
     left: 50%;
-    transform-origin: center center;
-
+    transform: translate(-50%, 0); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
 }
 
 .enlarged-date .task-item{
@@ -176,16 +177,66 @@
 }
 
 .upcoming-tasks{
-    font-size: 24px;
-    position: sticky;
-    bottom: 0;
-    color: #c286ff;
-    padding: 16px;
-    border-top: 1px solid #ff76a3;
-    margin-top: 16px;
-    text-align: left;
-    z-index: 5;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #ff76a3;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
 }
  .insert-task{
-    color: #c286ff;
+    color: black;
  }
+ .min-h-screen-a {
+    min-height: 100vh; 
+    height: auto; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.progression-bar {
+    margin-top: 50px; 
+    padding: 20px; 
+    background: linear-gradient(360deg, #7a34a1 0%, #c286ff 50%, #ff76a3 100%);
+    border-radius: 12px; 
+    box-shadow: 0px 2px rgb(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.progressBar {
+    margin-bottom: 20px;
+}
+
+.progressBar div {
+    height: 20px; 
+    border-radius: 10px; 
+}
+
+
+
+.progression-bar h3 {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.progressBar .flex {
+    justify-content: space-between;
+    font-size: 14px;
+    color: whitesmoke;
+}
+
+.toggle-completed-button {
+    background-color: #ff76a3;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }

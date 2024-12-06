@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Plus } from 'lucide-react';
+import React, { useState } from 'react';
 import '../styles/task.css';
-import ProgressTracker from './ProgressTracker';
+
 
 
 const Task = () => {
@@ -11,6 +11,7 @@ const Task = () => {
   const [showTaskInput, setShowTaskInput] = useState(false);
   const [newTask, setNewTask] = useState({ description: '', time: '', priority: '' });
   const [clickedDate, setClickedDate] = useState(null);
+
 
   const daysInMonth = new Date(
     currentDate.getFullYear(),
@@ -79,6 +80,33 @@ const Task = () => {
     }
   };
 
+  const markCompleted = (dateKey, index) => {
+    setTasks((prev) => {
+      const updatedTasks = { ...prev };
+      updatedTasks[dateKey] = updatedTasks[dateKey].map((task, i) =>
+        i === index ? { ...task, completed: !task.completed } : task
+      );
+      return updatedTasks;
+    });
+  };
+
+  const priorityProgress = () => {
+    const progress = { high: { total: 0, completed: 0}, moderate: {total: 0, completed: 0}, low: { total: 0, completed: 0 } };
+    Object.values(tasks).forEach(taskList => {
+      taskList.forEach(task => {
+        if(task.priority) {
+          progress[task.priority].total += 1;
+          if(task.completed){
+            progress[task.priority].completed += 1;
+          }
+        }
+      });
+    });
+    return progress;
+
+  };
+  const progress = priorityProgress();
+
   // Function to check if a task is within the next 12 hours
   const isTaskWithinNext12Hours = (taskTime, dateKey) => {
     const currentTime = new Date();
@@ -125,137 +153,177 @@ const Task = () => {
   const upcomingTasks = getUpcomingTasks();
 
   return (
-    <div className="min-h-screen bg-[#25262E] flex items-center justify-center">
-      <div className="w-full max-w-5xl calendar-container text-white p-6">
-        <div className="flex items-center justify-between mb-4">
-          <button onClick={prevMonth} className="p-2 hover:bg-[#ff76a3] rounded-full">
-            <ChevronLeft className="w-6 h-6 text-white" />
-          </button>
-          <h2 className="lg:text-8xl pixelify-sans second-header-text-gradient animate__animated animate__flipInX">
-            {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
-          </h2>
-          <button onClick={nextMonth} className="p-2 hover:bg-[#ff76a3] rounded-full">
-            <ChevronRight className="w-6 h-6 text-white" />
-          </button>
-          <button onClick={addNewTask} className="p-2 hover:bg-[#ff76a3] rounded-full ml-4">
-            <Plus className="plus-button w-10 h-10 text-white" />
-          </button>
-        </div>
-
-        <div className="grid grid-cols-7 gap-2 mb-2">
-          {days.map(day => (
-            <div key={day} className="days-of-week">
-              {day}
+    <div className="min-h-screen-a">
+        <div className="calendar-container">
+            <div className="flex items-center justify-between mb-4">
+                <button onClick={prevMonth} className="p-2 hover:bg-[#ff76a3] rounded-full">
+                    <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+                <h2 className="lg:text-8xl pixelify-sans second-header-text-gradient animate__animated animate__flipInX">
+                    {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
+                </h2>
+                <button onClick={nextMonth} className="p-2 hover:bg-[#ff76a3] rounded-full">
+                    <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+                <button onClick={addNewTask} className="p-2 hover:bg-[#ff76a3] rounded-full ml-4">
+                    <Plus className="plus-button w-10 h-10 text-white" />
+                </button>
             </div>
-          ))}
-        </div>
 
-        <div className="grid grid-cols-7 gap-2 mb-4">
-          {Array.from({ length: firstDayOfMonth }).map((_, index) => (
-            <div key={`empty-${index}`} className="p-2"></div>
-          ))}
+            <div className="grid grid-cols-7 gap-2 mb-2">
+                {days.map(day => (
+                    <div key={day} className="days-of-week">
+                        {day}
+                    </div>
+                ))}
+            </div>
 
-          {Array.from({ length: daysInMonth }).map((_, index) => {
-            const day = index + 1;
-            const dateKey = getDateKey(day);
-            const dayTasks = tasks[dateKey] || [];
-            return (
-              <div
-                key={day}
-                onClick={() => handleDateClicked(dateKey)}
-                className={`days-of-month ${isToday(day) ? 'today' : ''} ${clickedDate === dateKey ? 'enlarged-date' : ''}`}
-              >
-                {day}
-                {dayTasks.length > 0 && (
-                  <div className={`priority-marker ${dayTasks[0].priority}`} />
-                )}
-                {clickedDate === dateKey && (
-                  <div className="dated-tasks">
-                    {dayTasks.length > 0 ? (
-                      dayTasks.map((task, i) => (
-                        <div key={i} className="task-item">
-                          <p><strong>Time: </strong>{task.time}</p>
-                          <p><strong>Description: </strong>{task.description}</p>
+            <div className="grid grid-cols-7 gap-2 mb-4">
+                {Array.from({ length: firstDayOfMonth }).map((_, index) => (
+                    <div key={`empty-${index}`} className="p-2"></div>
+                ))}
+
+                {Array.from({ length: daysInMonth }).map((_, index) => {
+                    const day = index + 1;
+                    const dateKey = getDateKey(day);
+                    const dayTasks = tasks[dateKey] || [];
+                    return (
+                        <div
+                            key={day}
+                            onClick={() => handleDateClicked(dateKey)}
+                            className={`days-of-month ${isToday(day) ? 'today' : ''} ${
+                                clickedDate === dateKey ? 'enlarged-date' : ''
+                            }`}
+                        >
+                            {day}
+                            {dayTasks.length > 0 && (
+                                <div className={`priority-marker ${dayTasks[0].priority}`} />
+                            )}
+                            {clickedDate === dateKey && (
+                                <div className="dated-tasks">
+                                    {dayTasks.length > 0 ? (
+                                        dayTasks.map((task, i) => (
+                                            <div key={i} className="task-item">
+                                                <p>
+                                                    <strong>Time: </strong>
+                                                    {task.time}
+                                                </p>
+                                                <p>
+                                                    <strong>Description: </strong>
+                                                    {task.description}
+                                                </p>
+                                                <button
+                                                  onClick={() => markCompleted(dateKey, i)}
+                                                  className={`toggle-completed-button ${task.completed ? "completed" : ""}`}
+                                                  >
+                                                    {task.completed ? "Mark Incomplete" : "Mark Completed"}
+                                                  </button>
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <p className="no-created-tasks">No tasks for today!</p>
+                                    )}
+                                </div>
+                            )}
                         </div>
-                      ))
-                    ) : (
-                      <p className="no-created-tasks">No tasks for today!</p>
-                    )}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                    );
+                })}
+            </div>
+            {showTaskInput && (
+                <form onSubmit={insertNewTask} className="insert-task">
+                    <label>Select Date:</label>
+                    <input
+                        type="date"
+                        value={selectedDate || ''}
+                        onChange={(e) => setSelectedDate(e.target.value)}
+                        className="p-2 border rounded"
+                    />
+                    <label>Time:</label>
+                    <input
+                        type="time"
+                        value={newTask.time}
+                        onChange={(e) => setNewTask({ ...newTask, time: e.target.value })}
+                        className="p-2 border rounded"
+                    />
+                    <label>Description:</label>
+                    <input
+                        type="text"
+                        value={newTask.description}
+                        onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
+                        placeholder="Enter the task's description..."
+                        className="p-2 border rounded"
+                    />
+                    <label>Priority:</label>
+                    <select
+                        value={newTask.priority}
+                        onChange={(e) => setNewTask({ ...newTask, priority: e.target.value })}
+                        className="p-2 border rounded"
+                    >
+                        <option value="">Task Priority</option>
+                        <option value="low">Low</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button type="submit" className="add-button px-4 py-2 rounded">
+                        Add Task
+                    </button>
+                    <button type="button" onClick={closeNewTask} className="cancel-button px-4 py-2 rounded">
+                        Cancel
+                    </button>
+                </form>
+            )}
         </div>
-
-        {showTaskInput && (
-          <form onSubmit={insertNewTask} className="insert-task mt-4 flex gap-2">
-            <label className="text-white">Select Date:</label>
-            <input
-              type="date"
-              value={selectedDate || ''}
-              onChange={(e) => setSelectedDate(e.target.value)}
-              className="selected-task-date p-2 border rounded"
-            />
-            <label className="text-white">Time:</label>
-            <input
-              type="time"
-              value={newTask.time}
-              onChange={(e) => setNewTask({ ...newTask, time: e.target.value })}
-              className="new-task-time p-2 border rounded"
-            />
-            <label className="text-white">Description:</label>
-            <input
-              type="text"
-              value={newTask.description}
-              onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
-              placeholder="Enter the task's description..."
-              className="new-task-description p-2 border rounded text-[#ff76a3]"
-            />
-            <label className="text-white">Priority:</label>
-            <select
-              value={newTask.priority}
-              onChange={(e) => setNewTask({ ...newTask, priority: e.target.value })}
-              className="new-task-priority p-2 border rounded"
-            >
-              <option value="">Task Priority</option>
-              <option value="low">Low</option>
-              <option value="moderate">Moderate</option>
-              <option value="high">High</option>
-            </select>
-            <button
-              type="submit"
-              className="add-button px-4 py-2 rounded flex items-center"
-            >
-              Add Task
-            </button>
-            <button type="button" onClick={closeNewTask} className="cancel-button px-4 py-2 rounded">
-              Cancel
-            </button>
-          </form>
-
-        )}
-        <ProgressTracker tasks={tasks} />
-
-        {/* Display tasks for the next 12 hours below the calendar */}
-        <div className="upcoming-tasks mt-6">
-          <h3 className="text-xl font-semibold text-white mb-4">Upcoming Tasks in the Next 12 Hours</h3>
-          {upcomingTasks.length > 0 ? (
-            upcomingTasks.map((item, index) => (
-              <div key={index} className="task-item mb-3">
-                <p><strong>Date: </strong>{item.dateKey}</p>
-                <p><strong>Time: </strong>{item.task.time}</p>
-                <p><strong>Description: </strong>{item.task.description}</p>
-                <p><strong>Priority: </strong>{item.task.priority}</p>
-              </div>
-            ))
-          ) : (
-            <p className="text-gray-400">No tasks in the next 12 hours.</p>
-          )}
+        <div className="lg:text-2xl pixelify-sans second-header-text-gradient animate__animated animate__flipInX">
+            <h3>Upcoming Tasks in the Next 12 Hours</h3>
+            {upcomingTasks.length > 0 ? (
+                upcomingTasks.map((item, index) => (
+                    <div key={index} className="task-item mb-3">
+                        <p><strong>Date: </strong>{item.dateKey}</p>
+                        <p><strong>Time: </strong>{item.task.time}</p>
+                        <p><strong>Description: </strong>{item.task.description}</p>
+                        <p><strong>Priority: </strong>{item.task.priority}</p>
+                        <p><strong>Completed: </strong>{item.task.completed ? "Yes" : "No"}</p>
+                        <button onClick={() => markCompleted(item.dateKey, index)}
+                        className={`toggle-completed-button ${item.task.completed ? "completed" : ""}`}
+                        >
+                          {item.task.completed ? "Mark Incomplete" : "Mark Completed"}
+                        </button>
+                    </div>
+                ))
+            ) : (
+                <p className="text-gray-400">No tasks in the next 12 hours.</p>
+            )}
         </div>
-      </div>
+        <div className="lg:text-6xl pixelify-sans second-header-text-gradient animate__animated animate__flipInX">
+            <h3>Progress Tracker</h3>
+            {['high', 'moderate', 'low'].map(priority => (
+                <div key={priority} className="progressBar">
+                    <div className="flex justify-between">
+                        <span className="capitalize">{priority} Priority</span>
+                        <span>{`${progress[priority].completed}/${progress[priority].total}`}</span>
+                    </div>
+                    <div className="w-full bg-gray-700">
+                        <div
+                            className={`${
+                                priority === 'high'
+                                    ? 'bg-red-500'
+                                    : priority === 'moderate'
+                                    ? 'bg-yellow-500'
+                                    : 'bg-green-500'
+                            }`}
+                            style={{
+                                width: `${
+                                    (progress[priority].completed /
+                                        (progress[priority].total || 1)) *
+                                    100
+                                }%`,
+                            }}
+                        ></div>
+                    </div>
+                </div>
+            ))}
+        </div>
     </div>
   );
 };
-
 export default Task;

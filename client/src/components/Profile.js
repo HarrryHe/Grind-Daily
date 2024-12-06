@@ -1,23 +1,39 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import Grind from '../assets/moon.png';
+import React, { useContext, useEffect, useState } from 'react';
+import { NavLink, useParams } from 'react-router-dom';
+import defaultAvatar from '../assets/default-avatar.png';
 import Comment from "./Comment.js";
+import { AuthContext } from './helper/auth';
 
 function Profile() {
+  const { userId } = useParams();
+
   const [user, setUser] = useState(null);
   const [error, setError] = useState('');
 
+  const [isUser, setIsUser] = useState(false);
+  const [ownerId, setOwnerId] = useState(null);
+
+  //check user logged in or not
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+
   useEffect(() => {
-    const userId = localStorage.getItem('userId');
     if (!userId) {
-      setError('User not logged in');
+      setError('User not Exist');
       return;
+    }
+
+    if (isLoggedIn) {
+      const id = localStorage.getItem('userId');
+      setOwnerId(id);
+      if (id === userId) {
+          setIsUser(true);
+      }
     }
 
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`https://grinddaily-backend.onrender.com/api/user/${userId}`);
+        const response = await fetch(`https://grinddaily.onrender.com/api/user/${userId}`);
         if (!response.ok) {
           throw new Error('User not found');
         }
@@ -51,8 +67,16 @@ function Profile() {
     );
   }
 
+
   return (
     <div className="px-8 py-32">
+      {!isUser && (
+        <div className="absolute top-20 left-4">
+          <NavLink to="/friend" className="text-sm font-semibold text-normal hover:text-white transition">
+              <span aria-hidden="true">&#128072;</span> Back
+          </NavLink>
+        </div>
+      )}
       <div className="absolute top-4 left-4">
       </div>
       <div className="grid gap-8 items-start justify-center">
@@ -60,38 +84,6 @@ function Profile() {
           <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
 
           <main className="profile-page">
-            <section className="relative block h-500-px">
-              <div
-                className="absolute top-0 w-full h-full"
-                style={{
-                  backgroundImage: `url(${Grind})`,
-                }}
-              >
-                <span
-                  id="blackOverlay"
-                  className="w-full h-full absolute opacity-50 bg-black"
-                ></span>
-              </div>
-              <div
-                className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
-                style={{ transform: "translateZ(0px)" }}
-              >
-                <svg
-                  className="absolute bottom-0 overflow-hidden"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="none"
-                  version="1.1"
-                  viewBox="0 0 2560 100"
-                  x="0"
-                  y="0"
-                >
-                  <polygon
-                    className="text-blueGray-200 fill-current"
-                    points="2560 0 2560 100 0 100"
-                  ></polygon>
-                </svg>
-              </div>
-            </section>
             <section className="relative py-16 bg-blueGray-200">
               <div className="container mx-auto px-4">
                 <div className="relative flex flex-col min-w-0 break-words w-full mb-6 rounded-lg">
@@ -101,8 +93,8 @@ function Profile() {
                         <div className="relative">
                           <img
                             alt="Profile"
-                            src={user.avatarUrl || "/images/anime0.jpg"}
-                            className="shadow-xl rounded-full h-auto align-middle border-none max-w-xs -mt-12"
+                            src={user.avatarUrl || defaultAvatar}
+                            className="shadow-xl rounded-full h-72 w-72 align-middle border-none max-w-xs -mt-12"
                           />
                         </div>
                       </div>
@@ -112,7 +104,7 @@ function Profile() {
                             <div className="grid gap-8 items-start justify-center">
                               <div className="relative group">
                                 <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-                                <NavLink to="/progress">
+                                <NavLink to={`/progress/${userId}`}>
                                   <button className="relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600">
                                     <span className="flex items-center space-x-5">
                                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-pink-600 -rotate-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -158,6 +150,9 @@ function Profile() {
                       <div className="text-sm leading-normal mt-0 mb-2 text-gray-200 font-bold uppercase animate__animated animate__flipInX">
                         Email: {user.email}
                       </div>
+                      <div className="text-sm leading-normal mt-0 mb-2 text-gray-200 font-bold animate__animated animate__flipInX">
+                        User ID: {userId}
+                      </div>
                       <div className="mb-2 text-gray-200 mt-10 pixelify-sans-bold px-2 animate__animated animate__flipInX">
                         <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400 "></i>
                         {user.bio || "No bio available"}
@@ -166,7 +161,7 @@ function Profile() {
                     <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
                       <div className="flex flex-wrap justify-center">
                         <div className="w-full lg:w-9/12 px-4 ">
-                          <Comment />
+                          <Comment Comments={user.comments} profileUser={userId} commentUser={ownerId} />
                         </div>
                       </div>
                     </div>

@@ -36,7 +36,7 @@ function Card({ image, task, handleGenerateCard }) {
             generatedBy: task.generatedBy || "system",
         };
 
-        fetch('https://grinddaily-backend.onrender.com/api/challenge', {
+        fetch('https://grinddaily.onrender.com/api/challenge', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',

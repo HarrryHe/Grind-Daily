@@ -2,13 +2,14 @@ import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, UserIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import Lottie from "lottie-react";
 import { useContext, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import pixelAnimation from "./assets/pixel.json";
 import { AuthContext } from './components/helper/auth';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropDown, setDropDown] = useState(false);
+  const navigate = useNavigate();
 
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
@@ -20,6 +21,30 @@ export default function Header() {
 
     setIsLoggedIn(false);
     window.location.reload();
+  }
+
+  const handleProfileClick = () => {
+    const userId = localStorage.getItem('userId');
+    if (userId) {
+      navigate(`/profile/${userId}`);
+      window.location.reload();
+    } else {
+      alert('User not logged in');
+    }
+  };
+
+  const handleProgressClick = () => {
+    const userId = localStorage.getItem('userId');
+    if (userId) {
+      navigate(`/progress/${userId}`);
+      window.location.reload();
+    } else {
+      alert('User not logged in');
+    }
+  };
+
+  const handleMobileClick = () => {
+    setMobileMenuOpen(false);
   }
 
   return (
@@ -80,15 +105,6 @@ export default function Header() {
           >
             Calendar
           </NavLink>
-
-          <NavLink
-            to="/progresstracker"
-            className={({ isActive }) => 
-              isActive ? "text-sm font-semibold text-indigo-400" : "text-sm font-semibold text-link"
-            }
-          >
-            Progress Tracker
-          </NavLink>
         </div>
 
         {/* User Dropdown or Login Link */}
@@ -101,10 +117,13 @@ export default function Header() {
             {dropDown && (
               <div className="absolute right-0 mt-6 w-48 bg-zinc-800 rounded-lg shadow-lg z-20">
                 <div className="py-2">
-                  <NavLink to="/profile" className="block px-4 py-2 text-link font-semibold hover:bg-gray-700">
+                  <button onClick={ handleProfileClick } className="block w-full px-4 py-2 text-link font-semibold text-left hover:bg-gray-700">
                     Profile
-                  </NavLink>
-                  <NavLink to="/friends" className="block px-4 py-2 text-link font-semibold hover:bg-gray-700">
+                  </button>
+                  <button onClick={ handleProgressClick } className="block w-full px-4 py-2 text-link font-semibold text-left hover:bg-gray-700">
+                    Progress
+                  </button>
+                  <NavLink to="/friend" className="block px-4 py-2 text-link font-semibold hover:bg-gray-700">
                     Friends
                   </NavLink>
                   <NavLink to="/settings" className="block px-4 py-2 text-link font-semibold hover:bg-gray-700">
@@ -150,21 +169,36 @@ export default function Header() {
                 <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2 text-base font-semibold text-link hover:bg-gray-700">
                   Home
                 </NavLink>
-                <NavLink to="/task" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2 text-base font-semibold text-link hover:bg-gray-700">
+                <NavLink to="/challenge" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2 text-base text-link font-semibold hover:bg-gray-700">
                   Challenges
                 </NavLink>
-                <NavLink to="/yourChallenge" onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2 text-base text-link font-semibold hover:bg-gray-700">
-                  Create Challenges
-                </NavLink>
-                <NavLink to="/progresstracker" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2 text-base font-semibold text-link hover:bg-gray-700">
-                  Progress Tracker
+                <NavLink to="/task" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2 text-base font-semibold text-link hover:bg-gray-700">
+                  Calendar
                 </NavLink>
               </div>
-              {!isLoggedIn && (
+              {!isLoggedIn ? (
                 <div className="py-6">
                   <NavLink to="/login" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-base font-semibold text-link hover:bg-gray-700">
                     Log in
                   </NavLink>
+                </div>
+              ):(
+                <div className="py-6">
+                  <button onClick={ () => {handleMobileClick(); handleProfileClick();} } className="block text-left w-full rounded-lg px-3 py-2.5 text-base font-semibold text-link hover:bg-gray-700">
+                    Profile
+                  </button>
+                  <button onClick={ () => {handleMobileClick(); handleProgressClick();} } className="block text-left w-full rounded-lg px-3 py-2.5 text-base font-semibold text-link hover:bg-gray-700">
+                    Progress
+                  </button>
+                  <NavLink to="/friend" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-base font-semibold text-link hover:bg-gray-700">
+                    Friends
+                  </NavLink>
+                  <NavLink to="/settings" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-2.5 text-base font-semibold text-link hover:bg-gray-700">
+                    Settings
+                  </NavLink>
+                  <button onClick={ () => {handleMobileClick(); handleLogout();} } className="block text-left w-full rounded-lg px-3 py-2.5 text-base font-semibold text-link hover:bg-gray-700">
+                    Log Out
+                  </button>
                 </div>
               )}
             </div>

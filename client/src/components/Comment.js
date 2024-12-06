@@ -1,16 +1,54 @@
-function Comment() {
+import React, { useState } from 'react';
+import defaultAvatar from '../assets/default-avatar.png';
+
+function Comment({ Comments = [], profileUser, commentUser }) {
+
+  const [comment, setComment] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleCommentPost = (e) => {
+    console.log(profileUser, commentUser);
+    const newComment = {
+      owner: profileUser,
+      guest: commentUser,
+      comment: comment,
+    }
+
+    fetch('https://grinddaily.onrender.com/api/comment', {
+      method: 'POST',
+      headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+      },
+      body: JSON. stringify(newComment),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+        if(!data.error) {
+            console.log('Comment Successfully Stored!', data);
+            setMessage('Comment Successfully Stored!');
+        }
+        else {
+            console.log('Failed to store', data.error);
+            setMessage('Failed to Send Comment.');
+        }
+    })
+    .catch((err) => {
+        console.log(err.message);
+    });
+  }
+
   return (
     <section class="bg-gray-900 py-8 lg:py-16 antialiased rounded-lg">
       <div class="max-w-2xl mx-auto px-4">
         <div class="flex justify-between items-center mb-6">
-          <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Comments (3)</h2>
+          <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Comments {Comments ? Comments.length : 0}</h2>
         </div>
-        <form class="mb-6">
+        <form class="mb-6" onSubmit={(e) => handleCommentPost(e)}>
           <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border bg-gray-800 border-gray-700">
             <label for="comment" class="sr-only">Your comment</label>
             <textarea id="comment" rows="6"
               class="px-0 w-full text-sm border-0 focus:ring-0 focus:outline-none text-white placeholder-gray-400 bg-gray-800"
-              placeholder="Write a comment..." required></textarea>
+              placeholder="Write a comment..." onChange={(e)=> setComment(e.target.value)}required></textarea>
           </div>
           <div class="px-8 py-32">
             <div class="grid gap-8 items-start justify-center">
@@ -22,59 +60,26 @@ function Comment() {
               </div>
             </div>
           </div>
+          <p className="text-gray-400">{message}</p>
         </form>
-        <article class="p-6 text-base rounded-lg bg-gray-900">
-          <footer class="flex justify-between items-center mb-2">
-            <div class="flex items-center">
-              <p class="inline-flex items-center mr-3 text-sm text-white font-semibold">
-                <img
-                  class="mr-2 w-6 h-6 rounded-full"
-                  src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                  alt="Michael Gough"
-                />
-                Michael Gough
-              </p>
-              <p class="text-sm text-gray-400"><time pubdate datetime="2022-02-08"
-                title="February 8th, 2022">Nov. 8, 2024</time></p>
-            </div>
-          </footer>
-          <p class="text-gray-400">Epic Profile bro</p>
-        </article>
-        
-        <article class="p-6 mb-3 text-base border-t border-gray-200 border-gray-700 bg-gray-900">
-          <footer class="flex justify-between items-center mb-2">
-            <div class="flex items-center">
-              <p class="inline-flex items-center mr-3 text-sm text-white font-semibold">
-                <img
-                  class="mr-2 w-6 h-6 rounded-full"
-                  src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-                  alt="Bonnie Green"
-                />
-                Bonnie Green
-              </p>
-              <p class="text-sm text-gray-400"><time pubdate datetime="2022-03-12"
-                title="March 12th, 2022">Mar. 12, 2024</time></p>
-            </div>
-          </footer>
-          <p class="text-gray-400">Sick profile man you are a grinder for real</p>
-        </article>
-        <article class="p-6 text-base border-t border-gray-200 border-gray-700 bg-gray-900">
-          <footer class="flex justify-between items-center mb-2">
-            <div class="flex items-center">
-              <p class="inline-flex items-center mr-3 text-sm text-white font-semibold">
-                <img
-                  class="mr-2 w-6 h-6 rounded-full"
-                  src="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
-                  alt="Helene Engels"
-                />
-                Helene Engels
-              </p>
-              <p class="text-sm text-gray-400"><time pubdate datetime="2022-06-23"
-                title="June 23rd, 2022">Nov. 12, 2024</time></p>
-            </div>
-          </footer>
-          <p class="text-gray-400">Keep up the grinding man.</p>
-        </article>
+        {Comments && Comments.map(comment => (
+          <article key={comment._id} className="p-6 text-base bg-gray-900 border-b border-gray-400">
+            <footer className="flex justify-between items-center mb-2">
+              <div className="flex items-center">
+                <p className="inline-flex items-center mr-3 text-sm text-white font-semibold">
+                  <img
+                    class="mr-2 w-6 h-6 rounded-full"
+                    src={comment.guest.avatarUrl || defaultAvatar}
+                    alt="pic"
+                  />
+                  {comment.guest.username}
+                </p>
+                <p className="text-sm text-gray-400">{new Date(comment.date).toLocaleString()}</p>
+              </div>
+            </footer>
+            <p className="text-gray-400 text-left break-words">{comment.comment}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
