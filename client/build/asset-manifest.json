@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8ad05251.css",
+    "main.js": "/static/js/main.892e6fc2.js",
+    "static/js/453.419a5d54.chunk.js": "/static/js/453.419a5d54.chunk.js",
+    "static/media/earth.png": "/static/media/earth.5e70bb55af8e2796c305.png",
+    "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.ad1782c70927ebc5bc87.ttf",
+    "static/media/tarotCard.png": "/static/media/tarotCard.53baee60e7039977ff02.png",
+    "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.26b80c8830bebf340211.ttf",
+    "static/media/moon.png": "/static/media/moon.723ca6a52843c16e6969.png",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.83a538a018a9e44b023a.woff2",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.fdbb558523a380307689.woff2",
+    "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.05fdd87be89f7f8f0a1e.ttf",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.4f6a2dabee9c092d09b9.woff2",
+    "static/media/default-avatar.png": "/static/media/default-avatar.5c24360435747ad7f869.png",
+    "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.fa86b3c85e77abbd2ebd.ttf",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.c3ea317a0f10f201597f.woff2",
+    "static/media/chatBox.svg": "/static/media/chatBox.b24e558f2ac95b9edd3c5390d26c60e9.svg",
+    "static/media/randomCard.svg": "/static/media/randomCard.7123f9ee521229868a61b4b27228ad75.svg",
+    "static/media/createCard.svg": "/static/media/createCard.b18ca53d6ce73a9b543418611bfe5bcf.svg",
+    "index.html": "/index.html",
+    "main.8ad05251.css.map": "/static/css/main.8ad05251.css.map",
+    "main.892e6fc2.js.map": "/static/js/main.892e6fc2.js.map",
+    "453.419a5d54.chunk.js.map": "/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ad05251.css",
+    "static/js/main.892e6fc2.js"
+  ]
+}
