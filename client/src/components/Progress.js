@@ -18,7 +18,7 @@ function Progress () {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        fetch(`https://grinddaily.onrender.com/api/challenge/${userId}`, {
+        fetch(`https://grinddaily-backend.onrender.com/api/challenge/${userId}`, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
@@ -52,7 +52,7 @@ function Progress () {
 
             const fetchUserData = async () => {
                 try {
-                    const response = await fetch(`http://localhost:9000/api/user/${userId}`);
+                    const response = await fetch(`https://grinddaily-backend.onrender.com/api/user/${userId}`);
                     if (!response.ok) {
                         throw new Error('User not found');
                     }

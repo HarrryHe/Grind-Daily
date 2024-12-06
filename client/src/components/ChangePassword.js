@@ -62,7 +62,7 @@ function ChangePassword() {
         }
 
         try {
-            const response = await fetch('https://grinddaily.onrender.com/api/change-password', {
+            const response = await fetch('https://grinddaily-backend.onrender.com/api/change-password', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

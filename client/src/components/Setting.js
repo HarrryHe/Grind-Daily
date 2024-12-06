@@ -18,7 +18,7 @@ function Setting() {
 
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`https://grinddaily.onrender.com/api/user/${userId}`);
+        const response = await fetch(`https://grinddaily-backend.onrender.com/api/user/${userId}`);
         if (!response.ok) {
           throw new Error('User not found');
         }
@@ -47,7 +47,7 @@ function Setting() {
     }
 
     try {
-      const response = await fetch(`https://grinddaily.onrender.com/api/user/${userId}`, {
+      const response = await fetch(`https://grinddaily-backend.onrender.com/api/user/${userId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),

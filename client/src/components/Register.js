@@ -31,7 +31,7 @@ function Register() {
             return;
         }
 
-        fetch('https://grinddaily.onrender.com/api/register', {
+        fetch('https://grinddaily-backend.onrender.com/api/register', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',

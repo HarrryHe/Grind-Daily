@@ -14,7 +14,7 @@ function Comment({ Comments = [], profileUser, commentUser }) {
       comment: comment,
     }
 
-    fetch('https://grinddaily.onrender.com/api/comment', {
+    fetch('https://grinddaily-backend.onrender.com/api/comment', {
       method: 'POST',
       headers: {
           'Content-type': 'application/json; charset=UTF-8',
